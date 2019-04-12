@@ -1,0 +1,23 @@
+extends layout.pug
+
+block content
+      h1 Il y a #{numberOfProducts} produits dans la base 
+
+      div(class="mb-4")
+         a(href="/produit/form") Nouveau produit
+
+      table(class="table table-bordered table-striped")
+         tr
+            th Désignation
+            th Prix
+            th Stock
+            th 
+         each product in productList
+            tr
+               td=product.designation
+               td=product.prix
+               td=product.qte_stockee
+               td
+                  a(href="/produit/delete/"+product.id_produit class="btn btn-danger") Supprimer
+
+                  a(href="/produit/update/"+product.id_produit class="btn btn-primary ml-3") Modifier

@@ -1,0 +1,25 @@
+extends layout.pug
+
+block content
+
+   
+
+   form(method="post")
+
+      div(class="form-group")
+         label Désignation
+         input(type="text" name="designation" class="form-control" 
+         value=product?product.designation:'')
+
+      div(class="form-group")
+         label Prix
+         input(type="number" name="prix" class="form-control" step=".1"
+         value=product?product.prix:'')
+
+      div(class="form-group")
+         label Stock
+         input(type="number" name="qte_stockee" class="form-control"
+         value=product?product.qte_stockee:'')
+
+      div(class="form-group")
+         button(type="submit" class="btn btn-primary btn-block") Valider
